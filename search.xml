@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>安卓手机获取 ROOT 权限</title>
+    <url>/posts/951.html</url>
+    <content><![CDATA[<div class="tip home"><p>蓝奏云链接可能跟不上官网最新版</p>
+</div>
+<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>root 权限，类似于 Windows 系统中的 Administrator【管理员】，root 是 Linux 和 unix 系统中的超级管理员用户帐户，该帐户拥有整个系统至高无上的权力，所有对象他都可以操作。获得 root 权限之后就意味着已经获得了系统的最高权限，这时候你可以对系统中的任何文件（包括系统文件）执行所有增、删、改、查的操作。</p>
+<p>安卓【Android】是一种基于 Linux 内核（不包含 GNU 组件）的自由及开放源代码的操作系统。安卓手机 root 权限是 andriod 的使用最高权限，获取了 root 权限，可以轻松的对手机刷机备份还原卸载系统文件等重要操作。</p>
+<p>iPhone 的操作系统【ios】获取 root 权限的操作一般叫越狱。</p>
+<h1 id="一般手机获取-root"><a class="markdownIt-Anchor" href="#一般手机获取-root"></a> 一般手机获取 root</h1>
+<p>像小米（Xiaomi）、魅族（Meizu）、一加（OnePlus）等品牌手机，厂商提供了官方通道，获取 root 权限就很简单了。</p>
+<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
+<p><strong>玩 Android 怎能不 root 呢？</strong></p>
+<p><strong>本案例以小米 Mix3 为例，教程开始！</strong></p>
+<p><strong>准备材料：</strong></p>
+<p><strong>1. 手机【废话】</strong></p>
+<p><strong>2. 电脑【Win7 及以上系统】</strong></p>
+<p><strong>3. 数据线【注意电脑 USB 接口】</strong></p>
+<p>也可利用云电脑手机给手机进行下列操作，具体教程以后更新。（咕咕咕）</p>
+<h2 id="一-按需数据备份"><a class="markdownIt-Anchor" href="#一-按需数据备份"></a> 一. 按需数据备份</h2>
+<p>按自己需求备份重要文件</p>
+<h2 id="二-安装手机驱动"><a class="markdownIt-Anchor" href="#二-安装手机驱动"></a> 二. 安装手机驱动</h2>
+<p>让电脑读取到手机，一般需要为电脑安装手机驱动程序。</p>
+<ol>
+<li>以小米手机为例，下载官方 <a href="http://bigota.d.miui.com/tools/MiFlash2018-5-28-0.zip">MiFlash 工具</a> 并解压；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802183647.png" width="500" alt="MIFLASH 解压"></img></p>
+<ol start="2">
+<li>双击运行 XiaoMiFlash.exe 应用程序，它会自动检测手机驱动是否安装，点击安装即可；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802183943.png" width="500" alt="打开 MISLASH"></img></p>
+<ol start="3">
+<li>如弹出安全检测窗口，点击同意；【一般会弹多次】</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/Download_20200802123458.png" width="500" alt="一直同意即可，图源 baidu"></img></p>
+<ol start="4">
+<li>出现以下窗口代表驱动程序安装成功…</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802184651.png" width="500" alt="install done"></img></p>
+<p>【注意事项】如果未自动检测点击左上角 Driver 即可。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802184451.png" width="500" alt="Driver"></img></p>
+<h2 id="三-解-bl-锁unlock"><a class="markdownIt-Anchor" href="#三-解-bl-锁unlock"></a> 三. 解 BL 锁（Unlock）</h2>
+<p>为了避免在应用 Android 平台时的一些潜在风险，厂商的通用做法就是设置 BootLoader 锁，防止用户对手机系统进行更改，这种做法在保证安全的同时，一定程度上也限制了 Android 系统潜能的发挥。BootLoader 锁，简称 BL 锁，就是在操作系统内核运行之前运行的一段小程序。</p>
+<p>如果你的手机没有 BL 锁，可直接跳过本步骤。</p>
+<ol>
+<li>
+<p>在需要解锁的设备中登录已经具备解锁权限的小米账号，并进入“设置 -&gt; 开发者选项 -&gt; 设备解锁状态”中绑定账号和设备；</p>
+</li>
+<li>
+<p>绑定成功后，手动进入 Bootloader/Fastboot 模式（关机后，同时按住开机键和音量下键）；</p>
+</li>
+<li>
+<p>小米解 bl 锁官方网站：<a href="http://www.miui.com/unlock/index.html">http://www.miui.com/unlock/index.html</a></p>
+</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802162439.png" width="500" alt="MIUI.COM"></img></p>
+<ol start="4">
+<li>解压下载的文件后，双击运行 miflash_unlock.exe；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802163037.png" width="500" alt="运行应用程序"></img></p>
+<ol start="5">
+<li>点击同意，登录与绑定手机相同的账号登录。按提示操作即可解除 bl 锁…</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802163442.png" width="500" alt="点击同意"></img></p>
+<p>【小米解锁会清除全部数据，注意数据备份。】</p>
+<p>【遇到问题？ <a href="https://www.xiaomi.cn/post/17982230">点此查看 FAQ &gt;&gt;</a> 】</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802164909.png" width="500" alt="可能遇到的问题"></img></p>
+<h2 id="四-下载刷入-recovery恢复模式"><a class="markdownIt-Anchor" href="#四-下载刷入-recovery恢复模式"></a> 四. 下载刷入 recovery【恢复模式】</h2>
+<p>recovery，简称 rec。Recovery 是 Android 手机备份功能，指的是一种可以对安卓机内部的数据或系统进行修改的模式（类似于 windows PE 或 DOS）。在这个模式下可以，对已有的系统进行备份或升级，也可以在此恢复出厂设置。一般出厂的手机都自带了官方 rec。</p>
+<p>刷入第三方的 Recovery，将获得更多的功能，并且可以刷入第三方 rom，官方自带则不行。</p>
+<p>第三方 rec 制作者（团队）推荐</p>
+<ul>
+<li><strong>wzsx150’s twrp【LR.Team】</strong></li>
+</ul>
+<p><a href="https://weibo.com/u/6033736159?is_all=1">微博链接</a></p>
+<ul>
+<li><strong>orangefox’s twrp【部分机型系统支持 <a href="https://www.coolapk.com/feed/16774366?shareKey=M2MxYjc0NzI3ZTlhNWYyNjg1MGQ~&amp;shareUid=3377798&amp;shareFrom=com.coolapk.market_10.5-beta1">增量 OTA</a> 】</strong></li>
+</ul>
+<p><a href="https://orangefox.download/zh-CN">下载链接</a> （需🌏）</p>
+<ol>
+<li>以 wzsx150’s twrp-Xiaomi Mix3 为例，下载.7z 后缀名文件，解压到<font color="red">新文件夹</font>；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802173945.png" width="500" alt=".7z 解压"></img></p>
+<ol start="2">
+<li>双击 recovery-twrp 一键刷入工具.bat，根据命令提示符提示操作…</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802174035.png" width="500" alt="打开.bat"></img></p>
+<p>【注意事项】</p>
+<ul>
+<li>
+<p>手机开机状态下</p>
+<pre><code>  请您将手机正确连接到电脑：
+
+  请确保：
+
+【1.手机 bootloader 未锁】
+
+【2.手机处于开机状态】
+
+【3.手机开启 USB 调试】
+
+【4.电脑上已经正确安装驱动】
+
+【5.手机提示 USB 调试授权时勾选始终点击授权】
+</code></pre>
+</li>
+</ul>
+<p align="center"></p>
+<ul>
+<li>
+<p>手机 fastboot 状态下</p>
+<pre><code>    请您将手机正确连接到电脑：
+
+    请确保：
+
+  【1.手机 bootloader 未锁】
+
+  【2.手机处于 fastboot 模式】
+
+  【3.电脑上已经正确安装驱动】
+</code></pre>
+</li>
+</ul>
+<ol start="3">
+<li>成功后将自动进入第三方 rec；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/Download_20200802123457.jpg" width="500" alt="TWRP"></img></p>
+<ol start="4">
+<li>如需密码输入锁屏密码即可。</li>
+</ol>
+<h2 id="五-root-安装"><a class="markdownIt-Anchor" href="#五-root-安装"></a> 五. ROOT 安装</h2>
+<p>广为人知的 root 获取及管理程序有 SuperSU 和 Magisk。前者不支持高版本安卓，后者功能更为强大，且支持到了 Android 10.0，作者也正在测试 Android11.0。</p>
+<p>Magisk 官方介绍：</p>
+<p>Magisk is a suite of open source tools for customizing Android, supporting devices higher than Android 4.2. It covers fundamental parts of Android customization: root, boot scripts, SELinux patches, AVB2.0 / dm-verity / forceencrypt removals etc.</p>
+<blockquote>
+<p><a href="https://github.com/topjohnwu/Magisk">Github</a><br />
+可为 Android4.2 以上的系统支持 SU【root】、开机启动脚本、SELinux 补丁、AVB2.0 等等等功能。<br />
+Magisk 也称面具、脸谱。</p>
+</blockquote>
+<p>Magisk 22.0 版本改动较大，提供不同版本教程。<br />
+<a href="https://luoguihai.com/posts/36526.html">Magisk 22.0 具体变化</a></p>
+<details green><summary> Magisk 22.0 以下版本 </summary>
+              <div class='content'>
+              <ul><li>安装链接【安装教程接下】</li></ul><p><a href="https://github.com/topjohnwu/Magisk/releases/download/v20.4/Magisk-v20.4.zip">github</a></p><p><a href="https://guihai.lanzous.com/id1t1ih">蓝奏云</a></p><ul><li>卸载链接【如果安装后有问题可卸载】</li></ul><p><a href="https://github.com/topjohnwu/Magisk/releases/download/v20.4/Magisk-uninstaller-20200323.zip">github</a></p><p><a href="https://guihai.lanzous.com/iP0nef8cp9e">蓝奏云</a></p><ul><li>Magisk Manager 链接【APP】</li></ul><p><a href="https://github.com/topjohnwu/Magisk/releases/download/manager-v7.5.1/MagiskManager-v7.5.1.apk">github</a></p><p><a href="https://guihai.lanzous.com/ifsurf8cprc">蓝奏云</a></p>
+              </div>
+            </details>
+<details green><summary> Magisk 22.0 及以上版本 </summary>
+              <div class='content'>
+              <ul><li>安装链接【安装教程接下】</li></ul><p><a href="https://guihai.lanzous.com/ioCcgmrcech">蓝奏云</a></p><ul><li>卸载链接【如果安装后有问题可卸载】)</li></ul><p><a href="https://guihai.lanzous.com/ihK2Wmrjpqj">蓝奏云</a></p><ul><li>Magisk Manager 链接【APP】</li></ul><p><a href="https://github.com/topjohnwu/Magisk/releases/download/v22.0/Magisk-v22.0.apk">github</a></p><p><a href="https://guihai.lanzous.com/iTetqmrcddc">蓝奏云</a></p>
+              </div>
+            </details>
+<ol>
+<li>电脑下载 Magisk 安装压缩包，手机 rec 开启 MTP 模式；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/Screenshot_2020-08-02-19-53-16.png" width="500" alt="挂载"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/Screenshot_2020-08-02-19-53-26.png" width="500" alt="开启 MTP"></img></p>
+<ol start="2">
+<li>电脑访问手机内部存储，把下载的 Magisk 复制或剪切至手机内部存储，新建文件夹与否看你自己；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802195544.png" width="500" alt="/sdcard/"></img></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802195628.png" width="500" alt="新建文件夹"></img></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/20200802195828.png" width="500" alt="剪切文件"></img></p>
+<ol start="3">
+<li>手机 rec 返回主页，点击安装；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/Screenshot_2020-05-27-19-24-14.png" width="500" alt="安装"></img></p>
+<ol start="4">
+<li>找到刚才的文件并点击，滑动卡刷文件；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/Screenshot_2020-08-02-20-16-53.png" width="500" alt="/sdcard/面具"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/Screenshot_2020-08-02-20-16-58.png" width="500" alt="Magisk.zip"></img></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/Screenshot_2020-08-02-20-17-11.png" width="500" alt="OK"></img></p>
+<ol start="5">
+<li>一切完成后点击重启系统即可。</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/Screenshot_2020-08-02-20-18-44.png" width="500" alt="reboot"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/4b0c520677c0d946466fd1e38314a3a0.jpg" width="500" alt="reboot"></img></p>
+<p>【注意事项】</p>
+<p>如果重启系统 1-6 分钟后手机还在重启中，请卡刷卸载包。你下载的 Magisk 版本并不试用于你的手机系统，请更换版本。</p>
+<h1 id="其他手机获取-root-权限"><a class="markdownIt-Anchor" href="#其他手机获取-root-权限"></a> 其他手机获取 root 权限</h1>
+<p>官方暂未提供通道解 BL 锁？如华为，OPPO，VIVO 等新出的手机，这个无解。华为很久之前出的老手机似乎可以某宝买解锁码，请自行搜索。【似乎很贵】</p>
+<p>像一些非旗舰，不是很知名的手机如何获取 root 权限呢？如有 BL 锁，上 <a href="www.baidu.com">百度</a> 问一问，或许能有方法。</p>
+<p>无 BL 锁或已解 BL 锁，第三方 rec 也可以上 <a href="www.baidu.com">百度</a> 问一问，实在无法可以找一键刷机类的 pc 端工具，比如线刷宝，奇兔刷机。</p>
+<p>还有一种方法，通过 Magisk Manager 制作更改过的 Boot.img，fastboot 模式刷入即可，下次更新详细教程……</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-bl-root/3ac54b8b41a5a86e2fba2ad675892b28.jpg" width="500" alt="梗"></img></p>
+<h1 id="已-root-您的手机"><a class="markdownIt-Anchor" href="#已-root-您的手机"></a> <strong>已 Root 您的手机？</strong></h1>
+<p>快来尝尝 <a href="https://luoguihai.com/posts/38842.html">Xposed</a>！！</p>
+<p>不知道升级系统？ <a href="https://luoguihai.com/posts/36480.html">点此查看教程 &gt;&gt;</a></p>
+<blockquote>
+<p>本文部分文字摘抄于 <a href="https://baike.baidu.com/item/root/73226">百度百科</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>ANDROID 教程</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+        <tag>root</tag>
+        <tag>magisk</tag>
+        <tag>miui</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用第三方 REC 卡刷系统升级包</title>
+    <url>/posts/36480.html</url>
+    <content><![CDATA[<div class="tip home"><p>蓝奏云链接可能跟不上官网最新版</p>
+</div>
+<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>现在大多数手机都支持获取 root 权限，但获取成功后系统升级成为一个问题。虽有支持增量包更新的 rec，不过也会有些许 bug，我并不推荐。</p>
+<p><font color="">系统内直接下载更新，会自动进入 rec 卡刷，升级请重新刷入 magisk 防止 rec 恢复官方 rec 并获取 root 权限</font></p>
+<p><font color="red">此教程同样适用于卡刷官改ROM、原生类原生ROM以及其他ROM。</font></p>
+<h1 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h1>
+<h2 id="下载系统升级包"><a class="markdownIt-Anchor" href="#下载系统升级包"></a> 下载系统升级包</h2>
+<ol>
+<li>网上找到自己机型的系统更新<font color="red">完整</font>包，大小一般为 1-3GB。以 Redmi K20 Pro 为例，5 月 26 号发布的 miui12 更新包的链接为</li>
+</ol>
+<p><a href="https://hugeota.d.miui.com/20.5.26/miui_RAPHAEL_20.5.26_bf8b2a8b59_10.0.zip">https://hugeota.d.miui.com/20.5.26/miui_RAPHAEL_20.5.26_bf8b2a8b59_10.0.zip</a></p>
+<ol start="2">
+<li>复制该链接到浏览器打开，在弹出的对话框选择下载。</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-18-29-37-223_com.quark.browser.jpg" width="500" alt="夸克浏览器为例"></img></p>
+<ol start="3">
+<li>其中下载<font color="red">文件路径</font>为</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/IMG_20200527_183220.jpg" width="500" alt="文件路径示例"></img></p>
+<p>其他浏览器看浏览器设置就可以找到保存路径</p>
+<blockquote>
+<p>熟悉什么是路径？<br />
+路径就是指由这个文件所在的路径引起的跟其它文件（或文件夹）的路径关系。例如/storage/emulated/0/tencent/QQ_Images/<br />
+/ 表示下一级文件（或文件夹）<br />
+一般/storage/emulated/0/和/sdcard/都是表示手机内部存储根目录，在手机<font color="red">自带文件管理器中</font>可以无视，不过用高级文件管理器和 rec 就需要知晓。</p>
+</blockquote>
+<h2 id="验证升级包-md5-及下载-magisk"><a class="markdownIt-Anchor" href="#验证升级包-md5-及下载-magisk"></a> 验证升级包 md5 及下载 magisk</h2>
+<ol>
+<li>下载完成后，得到一个名为</li>
+</ol>
+<p><font color="blue">miui_RAPHAEL_20.5.26_bf8b2a8b59_10.0</font>的 ZIP 文件，后缀名为.zip 压缩型文件，分开解释一下命名</p>
+<p>miui（系统名）_RAPHAEL（机型代码，请<font color="red">熟知</font>自己机型代码）_20.5.26（系统版本日期）_bf8b2a8b59（文件 md5 值的前十位）_10.0（安卓版本，这里为安卓十）</p>
+<ol start="2">
+<li>然后打开 MT 管理器，找到文件所在路径。</li>
+</ol>
+<blockquote>
+<p>MT 管理器<br />
+我愿称它为安卓最强文件管理器，功能请参考百度 MT 官网。<br />
+/storage/emulated/0/Quark/Download/为刚才下载的文件路径，MT 管理器依次打开就可以看到下载的 zip 文件。长按它，在弹出的对话框中选择<font color="red">属性</font>——<font color="blue">效验</font>，对比实际 md5 值和本地文件 md5 值，对比前几位就行，正确代表文件下载顺利。</p>
+</blockquote>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-22-51-637_bin.mt.plus.jpg" width="500"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-24-21-969_bin.mt.plus.jpg" width="500"></img></p>
+<p>一般浏览器下载的文件不会出错，但为了以防万一，不过一般的 rec 自带安装前检测，但自己熟知一下操作也好，如果是错误的，就不需要浪费时间去 rec 了。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/IMG_20200527_212658.jpg" width="500"></img></p>
+<ol start="3">
+<li>可以在手机内部存储创建一个新文件夹，移动系统更新包到该文件夹，以便找到它。然后浏览器再下载一个 Magisk 的压缩包，也可以移动到这个文件夹，之后会说到。<a href="https://guihai.lanzous.com/ioCcgmrcech">magisk-22.0 蓝奏云备份</a></li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-27-51-707_bin.mt.plus.jpg" width="500"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-28-10-476_bin.mt.plus.jpg" width="500"></img></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-28-18-080_bin.mt.plus.jpg" width="500"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-29-19-976_bin.mt.plus.jpg" width="500"></img></p>
+<blockquote>
+<p>md5 信息摘要算法<br />
+一种被广泛使用的密码散列函数，可以产生出一个 128 位（16 字节）的散列值（hash value），用于确保信息传输完整一致</p>
+</blockquote>
+<h2 id="recovery-介绍"><a class="markdownIt-Anchor" href="#recovery-介绍"></a> recovery 介绍</h2>
+<p>提到了这么多次 rec，那么这个 rec 到底是什么？rec 全名 recovery，手机端恢复模式。Recovery 是 Android 手机备份功能，指的是一种可以对安卓机内部的数据或系统进行修改的模式。在这个模式下可以，对已有的系统进行备份或升级，也可以在此恢复出厂设置。<a href="https://luoguihai.com/posts/951.html">第三方 recovery 刷入教程</a></p>
+<p>刷入第三方的 Recovery，将获得更多的功能，并且可以刷入第三方 rom，官方自带则不行。</p>
+<p>以第三方 Recovery_TWRP 为例，在手机关机状态下，一般手机进入 rec 的方法为，长按<font color="red">音量+键</font>和<font color="red">关机键</font>几秒钟即可。</p>
+<p>当然，有些软件或者模块可以在开机状态下快速进入 rec</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-19-15-31-551_com.tencent.mobileqq.jpg" width="500" alt="rec"></img></p>
+<h2 id="第四步"><a class="markdownIt-Anchor" href="#第四步"></a> 第四步</h2>
+<ol>
+<li>等待进入 twrp</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Download_20200802123457.jpg" width="500" alt="TWRP"></img></p>
+<ol start="2">
+<li>输入<font color="red">锁屏密码</font>解密 Data 分区</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-36-16.png" width="500"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-19-22-23.png" width="500"></img></p>
+<ol start="3">
+<li>等待进入主界面，点击<font color="red">安装</font></li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-19-24-14.png" width="500"></img></p>
+<ol start="4">
+<li>确保返回<font color="red">手机内部存储根目录</font><font color="blue">/sdcard/</font></li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-45-14.png" width="500"></img></p>
+<ol start="5">
+<li>找到<font color="red">系统更新包所在路径</font>，因为创建了新文件夹，所以很容易找</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-34-23.png" width="500"></img></p>
+<ol start="6">
+<li>直接点击系统更新包，进入确认刷入界面，点击<font color="red">添加更多卡刷包</font></li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-34-28.png" width="500"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-34-31.png" width="500"></img></p>
+<ol start="7">
+<li>再点击下载的 Magisk 卡刷包，Magisk 可以帮助手机获取 root 权限。并且 Magisk 具有模块功能，不直接修改系统文件达到替换的目的，很实用。<font color="red">必须刷入 root 后才能保证重启手机后 rec 不会恢复官方 rec，不然不仅没有了 root 权限，也没了第三方 rec，又得借助电脑刷入 rec。</font> <a href="https://luoguihai.com/posts/951.html#%E5%9B%9B-%E4%B8%8B%E8%BD%BD%E5%88%B7%E5%85%A5-recovery%E6%81%A2%E5%A4%8D%E6%A8%A1%E5%BC%8F">点此查看 REC 刷入教程 &gt;&gt;</a></li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-34-35.png" width="500"></img></p>
+<ol start="8">
+<li>再次进入确认刷入界面，底部直接滑动确定刷入操作</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-21-34-38.png" width="500"></img></p>
+<p>（可略过）如果你没有下载 Magisk，大部分的 twrp 都自带有 root 功能，只不过不是 Magisk 最新版。那就先直接刷系统更新包，完成后在 twrp 主界面点击高级——Root 系统即可。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-27-19-20-31.png" width="500"></img></p>
+<ol start="9">
+<li>等待进度条走完，一切顺利，没有红色字体报错的话直接重启手机即可。因为系统更新，第一次重启需要等待几分钟的时间。</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-15-18-17-22.png" width="500"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-05-15-18-18-27.png" width="500"></img></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/Screenshot_2020-08-02-20-18-44.png" width="500"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/android-update/4b0c520677c0d946466fd1e38314a3a0.jpg" width="500"></img></p>
+<h1 id="结束"><a class="markdownIt-Anchor" href="#结束"></a> 结束</h1>
+<p>重启手机没有问题，进入系统桌面后，系统更新包大可删除，不过建议保留，下次如果需要就不要重新下载了，留一两个完整包也可以防止变砖翻车。</p>
+<p>其他机型差不多都是同样的办法。</p>
+]]></content>
+      <categories>
+        <category>ANDROID 教程</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+        <tag>recovery</tag>
+        <tag>twrp</tag>
+        <tag>卡刷</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GG 修改器替换 QQ 好友消息内容</title>
+    <url>/posts/21544.html</url>
+    <content><![CDATA[<div class="tip home"><p>蓝奏云链接可能跟不上官网最新版</p>
+</div>
+<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>GameGuardian，GG 修改器，开挂，破解无所不能，轻松修改 app 数值。当然，仅限于简单的应用或游戏，相比于八门修改器功能更加强大。</p>
+<p>闲话少说，本文教程为利用 GG 修改器替换 QQ 好友消息内容，消息回复双方可见。当然，有专门的 xposed 模块具有这个功能，比如复读机可以直接使用，但需要付费，我买的时候是 10RMB，现在应该涨价了。</p>
+<h1 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h1>
+<h2 id="下载安装-gameguardian"><a class="markdownIt-Anchor" href="#下载安装-gameguardian"></a> 下载安装 GameGuardian</h2>
+<ol>
+<li><a href="http://gameguardian.net/">GG 修改器官网</a> <a href="http://gameguardian.net/download">下载页</a></li>
+</ol>
+<p>有时候下载会龟速，故 <a href="https://guihai.lanzous.com/iHizgmreg3c">GameGuardian-101.0 蓝奏云</a></p>
+<ol start="2">
+<li>下载完成后安装，安装完成后桌面会有两个 GG 修改器的图标，这是正常现象，官方说明：</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-01-49-45-462_com.niedjimbapjaww.jpg" width="500" alt="区别"></img></p>
+<ol start="3">
+<li>进入软件，GameGuardian 安装模式选择默认即可，然后随机包名修改，弹出 root 权限请求，点击允许，等待随机包名修改完成，重新安装打开后需再次允许 root 权限请求。<br />
+<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-01-29-35-207_catch_.me_.if_.you_.can_.jpg" width="500" alt="默认"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-01-29-41-191_catch_.me_.if_.you_.can_.jpg" width="500" alt="随机包名"></img></li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-01-29-47-180_com.topjohnwu.magisk.jpg" width="500" alt="超级用户请求"></img></p>
+<ol start="4">
+<li>软件主界面会有弹出多个弹窗，仔细阅读。出现悬浮窗权限请求，点击确定。</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-01-30-38-810_com.niedjimbapjaww.jpg" width="500" alt="悬浮窗权限"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-01-30-43-819_com.android.settings.jpg" width="500" alt="开启"></img></p>
+<ol start="5">
+<li>回到主界面，一切就绪，点击右下角开始即可。</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-01-30-58-744_com.niedjimbapjaww.jpg" width="500" alt="开始"></img></p>
+<h2 id="打开并选择进程和内存"><a class="markdownIt-Anchor" href="#打开并选择进程和内存"></a> 打开并选择进程和内存</h2>
+<ol>
+<li>打开 QQ / QQ 极速版，点击 GG 修改器悬浮窗，选择 QQ 进程：<br />
+<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/IMG_20200806_021225.jpg" width="500" alt="QQ 进程"></img></li>
+</ol>
+<p>如果没有弹出，手动点击进程选择。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/IMG_20200806_021310.jpg" width="500" alt="手动选择"></img></p>
+<ol start="2">
+<li>选择内存为 <code>J、A、JH</code> 内存。</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/IMG_20200806_021336.jpg" width="500" alt="内存选择"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/IMG_20200806_021413.jpg" width="500" alt="J、A、JH "></img></p>
+<h2 id="等待好友发送消息"><a class="markdownIt-Anchor" href="#等待好友发送消息"></a> 等待好友发送消息</h2>
+<p>好友测试</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-02-01-28-947_com.tencent.mobileqq.jpg" width="500" alt="等待"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-02-04-59-678_com.tencent.mobileqq.jpg" width="500" alt="来了"></img></p>
+<h2 id="搜索并修改数值"><a class="markdownIt-Anchor" href="#搜索并修改数值"></a> 搜索并修改数值</h2>
+<ol>
+<li>点击 GG 修改器悬浮窗，点击搜索，类型选择 <code>文本 UTF-16LE</code>；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/IMG_20200806_021455.jpg" width="500" alt="点击搜索"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/IMG_20200806_021516.jpg" width="500" alt="更改类型"></img></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/IMG_20200806_021538.jpg" width="500" alt="文本 UTF-16LE"></img></p>
+<ol start="2">
+<li>输入好友发来的消息，<code>早上好呀！</code>，点击新搜索；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/IMG_20200806_021811.jpg" width="500" alt="新搜索"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-02-06-32-145_com.tencent.mobileqq.jpg" width="500" alt="等待搜索"></img></p>
+<ol start="3">
+<li>确保更改所有结果，显示数值更改为大于搜索到的数值【如小于不需要更改】；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/IMG_20200806_021606.jpg" width="500" alt="显示数值更改"></img></p>
+<ol start="4">
+<li>然后点击修改修改数值（文本），【注意事项】前面的分号为文本 UTF-16LE 类型，需保留，好友发送了多少字，就改多少字，可少不可多。</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/IMG_20200806_021625.jpg" width="500" alt="修改文本"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/IMG_20200806_021639.jpg" width="500" alt="点击是"></img></p>
+<h2 id="修改完成"><a class="markdownIt-Anchor" href="#修改完成"></a> 修改完成</h2>
+<p>修改后可回复，回复消息双方可见。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-02-07-11-404_com.tencent.mobileqq.jpg" width="500" alt="效果图"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-02-07-26-625_com.tencent.mobileqq.jpg" width="500" alt="回复"></img></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-02-10-16-458_com.tencent.mobileqq.jpg" width="500" alt="效果图"></img></p>
+<p>他也可见，满脸问号？？</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-02-10-26-868_com.tencent.qqlite.jpg" width="500" alt="嘤嘤嘤"></img></p>
+<h1 id="结束"><a class="markdownIt-Anchor" href="#结束"></a> 结束</h1>
+<p>用来逗逗好友也是挺好玩，不过我还是推荐 QQ 复读机模块，快捷，不需要那么多操作，并且功能花里胡哨。（间接打广告）</p>
+<p>QQ 复读机属于 xposed 模块，需要付费。</p>
+<p><a href="https://luoguihai.com/posts/38842.html">xposed 使用教程</a> <a href="https://guihai.lanzous.com/iYhjtmrec8d">QQ 复读机-8.6.4 app</a></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-02-37-27-516_com.tencent.mobileqq.jpg" width="500" alt="功能图 1"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-02-37-36-810_com.tencent.mobileqq.jpg" width="500" alt="功能图 2"></img></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/gameguardian-qq-content/Screenshot_2020-08-06-02-42-43-214_com.tencent.mobileqq.jpg" width="500" alt="长按+1 即可修改"></img></p>
+]]></content>
+      <categories>
+        <category>GAMEGUARDIAN 教程</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+        <tag>gameguardian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/16107.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
+<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>HEXO 升级</title>
+    <url>/posts/26371.html</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>hexo 升级教程</p>
+<h1 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h1>
+<h2 id="全局升级-hexo-cil"><a class="markdownIt-Anchor" href="#全局升级-hexo-cil"></a> 全局升级 hexo-cil</h2>
+<ul>
+<li>
+<p><code>hexo version</code> 查看当前版本</p>
+</li>
+<li>
+<p><code>npm i hexo-cli -g</code> 安装升级</p>
+</li>
+<li>
+<p><code>hexo version</code> 检查是否升级成功</p>
+</li>
+</ul>
+<h2 id="查看并修改-hexo-最新版"><a class="markdownIt-Anchor" href="#查看并修改-hexo-最新版"></a> 查看并修改 hexo 最新版</h2>
+<ol>
+<li><a href="https://hexo.io/zh-cn/">hexo 官网</a> 以获取最新版本号；</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/hexo-update/20200805025107.png" width="500" alt="hexo 官网"></img></p>
+<ol start="2">
+<li>在博客根目录下修改 <code>package.json</code> 文件。</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/hexo-update/20200805025415.png" width="500" alt="修改版本号"></img></p>
+<p>嫌麻烦可直接指定版本安装 <code>npm install hexo@5.0.0 —save</code></p>
+<h2 id="npm-升级-hexo-及插件"><a class="markdownIt-Anchor" href="#npm-升级-hexo-及插件"></a> npm 升级 hexo 及插件</h2>
+<ul>
+<li>
+<p><code>npm install -g npm-check</code> 和 <code>npm-check</code>，检查插件是否有更新升级【可跳过】</p>
+</li>
+<li>
+<p><code>npm install -g npm-upgrade</code> 和 <code>npm-upgrade</code>，升级插件</p>
+</li>
+<li>
+<p><code>npm update -g</code> 以及 <code>npm update --save</code></p>
+</li>
+</ul>
+<h1 id="hexo-避坑指南"><a class="markdownIt-Anchor" href="#hexo-避坑指南"></a> hexo 避坑指南</h1>
+<p>①windows 运行 npm 命令，安装或卸载插件时都会有以下报错，出现 fsevents 依赖升级字样，不需要管它，因为升级或卸载 fsevents 依赖仍然会报错，该依赖希望运行在 MacOS 平台上，而当前的平台环境是 windows。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm WARN deprecated fsevents@1.2.9: One of your dependencies needs to upgrade to fsevents v2: 1) Proper nodejs v10+ support 2) No more fetching binaries from AWS, smaller package size</span><br></pre></td></tr></table></figure>
+<p>②windows 平台运行 <code>hexo d</code> 或 <code>hexo deploy</code> 时出现以下报错，</p>
+<p>编译器格式问题，Windows 使用回车和换行两个字符来结束一行，Git 会把 LF 替换为 CRLF。</p>
+<p>解决办法： 进入博客根目录，删除 <code>.deploy_git</code> 文件夹，Node.js 控制台输入 <code>git config --global core.autocrlf false</code> 回车确认，然后重新部署即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">The file will have its original line endings in your working directory.</span><br><span class="line">warning: LF will be replaced by CRLF in index.html.</span><br></pre></td></tr></table></figure>
+<p>③欢迎补充…</p>
+]]></content>
+      <categories>
+        <category>HEXO 教程</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Magisk-22.0 变动</title>
+    <url>/posts/36526.html</url>
+    <content><![CDATA[<div class="tip home"><p>蓝奏云链接可能跟不上官网最新版</p>
+</div>
+<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>Magisk 自 22.0 发生了巨大的变化<br />
+<a href="https://topjohnwu.github.io/Magisk/install.html">官方安装介绍</a></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/magisk-22.0/Screenshot_2021-03-11-09-25-35-412_com.topjohnwu.magisk.jpg" width="500"></img></p>
+<h1 id="无法更新下载"><a class="markdownIt-Anchor" href="#无法更新下载"></a> 无法更新下载</h1>
+<p>方案一：设置自定义国内链接</p>
+<p>方案二：挂梯解决</p>
+<p>方案三：<a href="https://guihai.lanzous.com/iTetqmrcddc">Magisk-22.0 蓝奏云</a></p>
+<h1 id="下载卡刷包问题"><a class="markdownIt-Anchor" href="#下载卡刷包问题"></a> 下载卡刷包问题</h1>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/magisk-22.0/Screenshot_2021-03-11-09-28-44-575_com.topjohnwu.magisk.jpg" width="500"></img></p>
+<p>22.0 开始，magisk 管理器、magisk 卡刷包、magisk 卸载包 三合一</p>
+<p>使用方法：可提取当前 apk，然后改名 zip 完成</p>
+<ol>
+<li>
+<p><code>.apk</code> 后缀：magisk 管理器<br />
+重命名下载文件<br />
+例如： <code>magisk.apk</code></p>
+</li>
+<li>
+<p><code>.zip</code> 后缀：不含文件名关键词(uninstall)均为 magisk 卡刷包<br />
+重命名下载文件<br />
+例如： <code>magisk.zip</code></p>
+</li>
+<li>
+<p>含文件名关键词(uninstall)为 magisk 卸载包<br />
+重命名下载文件<br />
+例如： <code>uninstall.zip</code></p>
+</li>
+</ol>
+<div class="tip "><p>其目的可能是为了配套使用，也为了避免国内下载麻烦，避免多次下载</p>
+</div>
+<h1 id="magisk-管理器打开提示"><a class="markdownIt-Anchor" href="#magisk-管理器打开提示"></a> magisk 管理器打开提示</h1>
+<p>提示①：magisk 管理器安装路径不合法，可能安装在了 system 下，可能存在两个 magisk 管理器</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/magisk-22.0/IMG_20210311_092702.jpg" width="500"></img></p>
+<ol>
+<li>禁用固化模块/将 system 下的 magisk 管理器删除</li>
+</ol>
+<p>(系统化虽好，但是不便 magisk 随机化隐藏卸载)</p>
+<ol start="2">
+<li>打开旧版管理器直接还原回去[滑稽]，让 magisk 管理器更新可覆盖，保证自身管理器为唯一</li>
+</ol>
+<div class="tip "><p>其目的可能：是为了更好的隐藏自身，因为一旦系统化，隐藏 magisk 应用将会失效，而部分人可能只关注失败并不想想怎么会失败，之前干了什么，所以保证自己在用户软件下且保证自己是唯一，可以有效解决 magisk 隐藏问题</p>
+</div>
+<p>提示②：一直是这样，谁的问题谁负责，谁责任找谁，之前 MIUI 很多人上 magisk 是直接通过自身 root 权限安装的，那么这样会造成 magiskSU 与 MIUISU 同时存在，而 magiskhide 只能尽量隐藏 root，外界干扰因素太多，所以可能会导致 magiskhide 失败，既然这样，保持自己 magisk 为唯一即可</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/magisk-22.0/IMG_20210311_092722.jpg" width="500"></img></p>
+<ol>
+<li>
+<p>提取 boot 镜像镜像镜像打包</p>
+</li>
+<li>
+<p>平刷官方 ROM，先去掉 MIUISU，随后使用 fastboot 刷入 boot 镜像</p>
+</li>
+</ol>
+<p>当然，如果你有第三方 rec，可以先平刷官方 ROM 再卡刷 magisk.zip，一气呵成</p>
+<blockquote>
+<p>转载自 <a href="https://www.coolapk.com/feed/25084560">酷安</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>ANDROID 教程</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+        <tag>root</tag>
+        <tag>magisk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>XPOSED 介绍和使用</title>
+    <url>/posts/38842.html</url>
+    <content><![CDATA[<div class="tip home"><p>蓝奏云链接可能跟不上官网最新版</p>
+</div>
+<details yellow><summary> 点开查看更新记录 </summary>
+              <div class='content'>
+              <div class="timeline"><div class="timenode"><div class="meta"><p><p>2021-03-10</p></p></div><div class="body"><ol><li>重构所有教程步骤</li><li>添加太极·阴升级应用的教程</li><li>添加 LSPosed 的刷入教程</li></ol></div></div></div>
+              </div>
+            </details>
+<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>Xposed 框架(Xposed Framework)是一套开源的、在 Android 高权限模式下运行的框架服务，可以在不修改 APK 文件的情况下影响程序运行(修改系统)的框架服务，基于它可以制作出许多功能强大的模块，且在功能不冲突的情况下同时运作。</p>
+<ul>
+<li>
+<p>中文名 Xposed 框架</p>
+</li>
+<li>
+<p>外文名 Xposed framework</p>
+</li>
+<li>
+<p>开发者 Rovo89</p>
+</li>
+<li>
+<p>网站 <a href="http://repo.xposed.info">repo.xposed.info</a></p>
+</li>
+<li>
+<p>编程语言 C++、Java</p>
+</li>
+<li>
+<p>开发状态 已停更</p>
+</li>
+</ul>
+<h2 id="应用介绍"><a class="markdownIt-Anchor" href="#应用介绍"></a> 应用介绍</h2>
+<h3 id="优点"><a class="markdownIt-Anchor" href="#优点"></a> 优点</h3>
+<ol>
+<li>
+<p>无需反编译 apk 文件达到修改 apk 的目的。</p>
+</li>
+<li>
+<p>能在 odexed 或 deodexed 的 Rom 上运行。</p>
+</li>
+</ol>
+<h3 id="应用介绍-2"><a class="markdownIt-Anchor" href="#应用介绍-2"></a> 应用介绍</h3>
+<p>当前，Per APP Setting(为每个应用设置单独的 dpi 或修改权限)、XPrivacy(防止隐私泄露)、对原生 Launcher 替换图标等应用或功能均基于此框架。</p>
+<p>Xposed 并不支持 Android 9 以上版本，但可经由 EdXposed 代替</p>
+<p>目前的已知问题：在一些手机的官方 Rom 中因为 oat 文件格式不同会导致卡在开机部分。Android 5 以上需要手动刷入框架。</p>
+<blockquote>
+<p>以上转载于 <a href="https://baike.baidu.com/item/Xposed%E6%A1%86%E6%9E%B6/16859077">百度百科</a></p>
+</blockquote>
+<h1 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h1>
+<p>看完介绍，是不是觉得 xposed 很厉害呢？又或者还是什么都看不懂？不慌，我来列举一些 xposed 模块你就知道它的强大了。</p>
+<div class="tabs" id="xposed"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#xposed-1">简单介绍</button></li><li class="tab"><button type="button" data-href="#xposed-2"><i class="iconfont icon-qq" style="text-align: center;"></i></button></li><li class="tab"><button type="button" data-href="#xposed-3"><i class="iconfont icon-wexin" style="text-align: center;"></i></button></li><li class="tab"><button type="button" data-href="#xposed-4"><i class="iconfont icon-551488821353490553221" style="text-align: center;"></i></button></li><li class="tab"><button type="button" data-href="#xposed-5"><i class="iconfont icon-android" style="text-align: center;"></i></button></li></ul><div class="tab-contents"><div class="tab-item-content" id="xposed-1"><p><strong>包括但不仅限于举例</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="xposed-2"><ul>
+<li>QX 模块</li>
+</ul>
+<p>【QQ 防撤回、抢红包、自动回复、闪照破解、语音转发等】</p>
+<ul>
+<li>QNotified</li>
+</ul>
+<p>【+1、发送卡片消息、自定义电量、群发文本消息等】</p>
+<ul>
+<li>XAutoDaily</li>
+</ul>
+<p>【会员签到、打卡礼包、萌宠任务等】</p>
+<ul>
+<li>ColorQQ</li>
+</ul>
+<p>【QQ 美化、主题导入、简洁 QQ 等】</p>
+<ul>
+<li>Other</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="xposed-3"><ul>
+<li>微 X 模块</li>
+</ul>
+<p>【自定义通知、朋友圈管理、通讯录、防撤回、屏蔽消息等】</p>
+<p>【功能过于丰富】</p>
+<ul>
+<li>MDWeChat</li>
+</ul>
+<p>【气泡美化、顶栏颜色自定义、背景自定义等】</p>
+<ul>
+<li>Other</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="xposed-4"><ul>
+<li>网易云音乐插件</li>
+</ul>
+<p>【等级设置、粉丝数量设置、本地黑胶会员、自动签到、界面美化等】</p>
+<ul>
+<li>杜比大喇叭</li>
+</ul>
+<p>【功能同上】</p>
+<ul>
+<li>Other</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="xposed-5"><ul>
+<li>核心破解</li>
+</ul>
+<p>【应用程序降级安装、应用不同签名强制安装】</p>
+<ul>
+<li>Xposed edge pro</li>
+</ul>
+<p>【定时计划、快速设置磁贴、快捷面板、手势按键等】</p>
+<ul>
+<li>Top Panel</li>
+</ul>
+<p>【通知自定义顶栏面板】</p>
+<ul>
+<li>Other</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<p>那么接下来开始教程。</p>
+<h2 id="确认手机是否-root"><a class="markdownIt-Anchor" href="#确认手机是否-root"></a> 确认手机是否 root</h2>
+<p>原版 xposed 需要 root 权限，但也出现了不需要 root 就可以使用 xposed 模块的框架，比如太极、应用转生等。太极有模块版本限制，应用转生无模块限制，他们能使用大部分常用模块，但因为无 root 权限，所以都无法使用系统相关的模块。并且都需要卸载原应用程序重新安装，非常繁琐，升级应用也比较困难。 <a href="https://luoguihai.com/posts/951.html">ROOT 教程 &gt;&gt;</a></p>
+<h3 id="无-root-太极举例"><a class="markdownIt-Anchor" href="#无-root-太极举例"></a> 无 root 太极举例</h3>
+<p>无 root 权限就使用太极【举例】，访问太极 <a href="https://taichi.cool/zh/download.html">官网</a> ，下载安装太极 app 并打开，无 root 权限将会是太极·阴。 <a href="https://guihai.lanzous.com/iKBnlmrc6uh">7.0 蓝奏云链接备份</a></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_123545.jpg" width="500" alt="太极官网"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-22-01-37-362_me.weishu.exp.jpg" width="500" alt="太极"></img></p>
+<p>【以 QQ 举例】</p>
+<ol>
+<li>点击右下角按钮，选择创建应用，等待手机已安装应用检测，选择 QQ 即可。太极·阴会重新签名 QQ，直接安装将会失败，需要卸载安装，请注意备份 QQ 数据。</li>
+</ol>
+<p>这是无 root 使用 xposed 的通病，都需要卸载旧版安装重新签名的版本，数据无价！</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-22-02-23-490_me.weishu.exp.jpg" width="500" alt="创建应用"></img></p>
+<ol start="2">
+<li>一切完成后下载模块，进入模块管理界面，勾选模块复选框，重启 QQ 即可。如果 QQ 加了白名单，在最近任务清理可能没用，重启 QQ 步骤-强制停止 QQ 运行-打开 QQ。</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-22-12-10-253_me.weishu.exp.jpg" width="500" alt="模块管理"></img></p>
+<ol start="3">
+<li>
+<p>模块需要适配才可以使用，升级应用 QQ 前请查看模块的升级日志是否适配了 QQ 新版本。</p>
+</li>
+<li>
+<p>太极各版本图示如下：</p>
+</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/-3c06c0c7a1005b1a.jpg" width="500" alt="图示"></img></p>
+<h3 id="太极阴升级应用小教程"><a class="markdownIt-Anchor" href="#太极阴升级应用小教程"></a> 太极·阴升级应用小教程</h3>
+<p>因为太极·阴更改了应用签名，通过应用商店更新将会安装失败，可通过以下教程更新。</p>
+<p>【以 QQ 举例】</p>
+<ol>
+<li><a href="https://im.qq.com/immobile/android/">QQ 官网</a>获取最新版下载</li>
+<li>打开太极</li>
+<li>点击右下角，弹出的菜单中选择创建应用</li>
+<li>创建应用界面，继续点击位于右下角的+号，选择刚才下载的最新版 QQ.apk，文件路径取决于你用什么浏览器下载的 QQ，例如系统自带的浏览器文件保存路径为<code>/sdcard/Download/</code>，其他浏览器查看设置可获取详细路径</li>
+<li>等待太极签名，签名成功后安装即可…</li>
+</ol>
+<blockquote>
+<p>模块为适配新版本？最新版不好用？<br />
+因为太极·阴无法使用<code>核心破解</code>模块，所以无法直接降级安装，只能备份数据卸载重装旧版了<br />
+<a href="https://m.wandoujia.com/apps/566489">QQ 豌豆荚历史版本</a></p>
+</blockquote>
+<h3 id="无-root-其他框架"><a class="markdownIt-Anchor" href="#无-root-其他框架"></a> 无 root 其他框架</h3>
+<p>应用转生或其他框架使用方法与太极类似，具体软件通过百度获取。</p>
+<div class="tip success"><p><strong>无 root 使用教程到此结束，以下通通可放弃。</strong></p>
+</div>
+<h2 id="确认安卓版本"><a class="markdownIt-Anchor" href="#确认安卓版本"></a> 确认安卓版本</h2>
+<p>首先进入手机设置-关于手机/设备，即可看到手机运行的安卓版本，各国产系统查看步骤大同小异。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-21-51-04-910_com.android.settings.jpg" width="500" alt="手机参数"></img></p>
+<h3 id="安卓-81-及以下"><a class="markdownIt-Anchor" href="#安卓-81-及以下"></a> 安卓 8.1 及以下</h3>
+<p>如果是 8.1 及以下系统，可以使用原版 xposed，但如果系统为 MIUI 就不行。8.1 + miui 系统 会卡开机动画，请勿作死尝试…</p>
+<p>提供 <a href="https://repo.xposed.info">官网链接</a> 和 <a href="https://guihai.lanzous.com/iNydSfby5id">蓝奏云链接</a> ，下载 xposed 安装并打开，点击界面中的安装选项，弹出 root 权限框，选择确认即可。安装前建议先下载 <a href="https://guihai.lanzous.com/iC37jfby45e">卸载包</a>，防止出错情况救砖备用。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/af0bcff73643c994e367a36036af69d2.jpg" width="500" alt="xposed installer"></img></p>
+<p>重启手机后将是全局 xposed，下载模块后需<strong>重启手机</strong>以开启模块使用。</p>
+<div class="tip success"><p><strong>原版 xposed 使用教程到此结束，以下通通可放弃。</strong></p>
+</div>
+<h3 id="安卓-90-及以上"><a class="markdownIt-Anchor" href="#安卓-90-及以上"></a> 安卓 9.0 及以上</h3>
+<p>如果是安卓 9.0 及以上，或者是 8.1 + miui 系统，可以看接下来的教程，使用太极·阳或者 EDXposed。</p>
+<h2 id="下载-magsk-模块并添加"><a class="markdownIt-Anchor" href="#下载-magsk-模块并添加"></a> 下载 Magsk 模块并添加</h2>
+<div class="tip faa-horizontal animated"><p><strong>任选其一即可，无法共存，请知悉。</strong></p>
+</div>
+<h3 id="使用太极"><a class="markdownIt-Anchor" href="#使用太极"></a> 使用太极</h3>
+<p>太极官网：<a href="https://taichi.cool/zh">https://taichi.cool/zh</a></p>
+<p>Magisk 22.0 版本改动较大，提供不同版本教程。<br />
+<a href="https://luoguihai.com/posts/36526.html">Magisk 22.0 具体变化</a></p>
+<details green><summary> Magisk 22.0 以下版本 </summary>
+              <div class='content'>
+              <p>下载太极 app，访问太极 <a href="https://taichi.cool/zh/download.html">官网</a> ，下载安装太极 app 并打开，无 root 权限将会是太极·阴。 <a href="https://guihai.lanzous.com/iKBnlmrc6uh">apk 7.0 蓝奏云链接备份</a></p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_123545.jpg" width="500" alt="太极官网"></img></p><p>下载 taichi-magisk 模块，<a href="https://guihai.lanzous.com/i1uCgmrc77a">蓝奏云链接</a> ，下载完成后打开 Magisk Manager 刷入模块，然后重启手机即可，重启后太极·阴将会变成太极·阳，可以使用系统相关的 xposed 模块，但仍有模块限制，可以加官方 Q 群了解无极开启【无极无模块限制】，创建应用不需要卸载重装，秒创建。</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_123600.jpg" width="500" alt="太极官网"></img></p><div class="tip warning faa-horizontal animated"><p><strong>请分清 Magisk 模块和 Xposed 模块！Magisk 模块为 zip 压缩包格式，xposed 模块为 apk/app。</strong></p></div><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-22-59-34-910_com.topjohnwu.magisk.jpg" width="500" alt="模块"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-22-59-59-034_com.topjohnwu.magisk.jpg" width="500" alt="添加模块"></img></p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-23-00-20-326_com.google.android.documentsui.jpg" width="1088" alt="选择 taichi"></img></p><p>等待刷入完成后，点击重启手机即可</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-23-00-32-542_com.topjohnwu.magisk.jpg" width="500" alt="完成后重启手机"></img></p>
+              </div>
+            </details>
+<details green><summary> Magisk 22.0 及以上版本 </summary>
+              <div class='content'>
+              <p>下载太极 app，访问太极 <a href="https://taichi.cool/zh/download.html">官网</a> ，下载安装太极 app 并打开，无 root 权限将会是太极·阴。 <a href="https://guihai.lanzous.com/iKBnlmrc6uh">apk 7.0 蓝奏云链接备份</a></p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_123545.jpg" width="500" alt="太极官网"></img></p><p>下载 taichi-magisk 模块，<a href="https://guihai.lanzous.com/i1uCgmrc77a">蓝奏云链接</a> ，下载完成后打开 Magisk 刷入模块，然后重启手机即可，重启后太极·阴将会变成太极·阳，可以使用系统相关的 xposed 模块，但仍有模块限制，可以加官方 Q 群了解无极开启【无极无模块限制】，创建应用不需要卸载重装，秒创建。</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_123600.jpg" width="500" alt="太极官网"></img></p><div class="tip warning faa-horizontal animated"><p><strong>请分清 Magisk 模块和 Xposed 模块！Magisk 模块为 zip 压缩包格式，xposed 模块为 apk/app。</strong></p></div><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_123623.jpg" width="500" alt="模块"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_153441.jpg" width="500" alt="添加模块"></img></p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_153512.jpg" width="1088" alt="选择 taichi"></img></p><p>等待刷入完成后，点击重启手机即可</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2021-03-10-15-53-09-058_com.topjohnwu.magisk.jpg" width="500" alt="完成后重启手机"></img></p>
+              </div>
+            </details>
+<h3 id="使用-edxposed"><a class="markdownIt-Anchor" href="#使用-edxposed"></a> 使用 EDXposed</h3>
+<p>EDXposed 官网：<a href="http://edxp.meowcat.org">http://edxp.meowcat.org</a><br />
+EDXposed Github 仓库地址：<a href="https://github.com/ElderDrivers/EdXposed">https://github.com/ElderDrivers/EdXposed</a></p>
+<p>Magisk 22.0 版本改动较大，提供不同版本教程。<br />
+<a href="https://luoguihai.com/posts/36526.html">Magisk 22.0 具体变化</a></p>
+<details green><summary> Magisk 22.0 以下版本 </summary>
+              <div class='content'>
+              <p>下载 EDXposed manager 应用，<a href="https://guihai.lanzous.com/i3D2Kmri48j">蓝奏云链接</a> 下载完成后安装。</p><p>可以打开 app 下载 edxposed-magisk 模块，也可以通过 <a href="https://guihai.lanzous.com/b00tri2vi">蓝奏云</a> 下载，密码:6g7j。需要下载两个，riru 和 edxposed-magisk 模块，缺一不可。</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_155537.jpg" width="500" alt="两个模块"></img></p><p>下载完成后打开 Magisk Manager 刷入模块，先选择 riru 模块，不重启返回，再选择 edxposed-magisk 模块，然后重启手机即可，重启后可以使用系统相关的 xposed 模块，无模块限制，秒添加应用程序。</p><div class="tip warning faa-horizontal animated"><p><strong>请分清 Magisk 模块和 Xposed 模块！Magisk 模块为 zip 压缩包格式，xposed 模块为 apk/app。</strong></p></div><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-22-59-34-910_com.topjohnwu.magisk.jpg" width="500" alt="模块"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-22-59-59-034_com.topjohnwu.magisk.jpg" width="500" alt="添加模块"></img></p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-23-14-08-966_com.google.android.documentsui.jpg" width="500" alt="先选择 riru 模块"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-23-15-21-030_com.topjohnwu.magisk.jpg" width="500" alt="返回"></img></p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-23-15-03-276_com.google.android.documentsui.jpg" width="500" alt="再选择 edxposed-magisk 模块"></img></p><p>等待刷入完成后，点击重启手机即可</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2020-08-05-23-15-40-782_com.topjohnwu.magisk.jpg" width="500" alt="重启手机即可"></img></p>
+              </div>
+            </details>
+<details green><summary> Magisk 22.0 及以上版本 </summary>
+              <div class='content'>
+              <p>下载 EDXposed manager 应用，<a href="https://guihai.lanzous.com/i3D2Kmri48j">蓝奏云链接</a> 下载完成后安装。</p><p>可以打开 app 下载 edxposed-magisk 模块，也可以通过 <a href="https://guihai.lanzous.com/b00ubqh5a">蓝奏云</a> 下载，密码:dqdq。需要下载两个，riru 和 edxposed-magisk 模块，缺一不可。</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_155537.jpg" width="500" alt="两个模块"></img></p><p>下载完成后打开 Magisk Manager 刷入模块，先选择 riru 模块，不重启返回，再选择 edxposed-magisk 模块，然后重启手机即可，重启后可以使用系统相关的 xposed 模块，无模块限制，秒添加应用程序。</p><div class="tip warning faa-horizontal animated"><p><strong>请分清 Magisk 模块和 Xposed 模块！Magisk 模块为 zip 压缩包格式，xposed 模块为 apk/app。</strong></p></div><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_123623.jpg" width="500" alt="模块"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_153441.jpg" width="500" alt="添加模块"></img></p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_153617.jpg" width="500" alt="先选择 riru 模块"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_153816.jpg" width="500" alt="返回"></img></p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_153639.jpg" width="500" alt="再选择 edxposed-magisk 模块"></img></p><p>等待刷入完成后，点击重启手机即可</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2021-03-10-16-12-08-520_com.topjohnwu.magisk.jpg" width="500" alt="重启手机即可"></img></p>
+              </div>
+            </details>
+<h3 id="使用-lsposed"><a class="markdownIt-Anchor" href="#使用-lsposed"></a> 使用 LSPosed</h3>
+<p>LSPosed 官网：<a href="https://lsposed.github.io/LSPosed">https://lsposed.github.io/LSPosed</a><br />
+LSPosed Github 仓库地址：<a href="https://github.com/LSPosed/LSPosed">https://github.com/LSPosed/LSPosed</a></p>
+<p>LSPosed，是基于EdXposed开发的半个新框架，<a href="https://www.coolapk.com/feed/24563277">具体改动</a></p>
+<details green><summary> Magisk 22.0 及以上版本 </summary>
+              <div class='content'>
+              <p>下载 LSPposed 应用，<a href="https://guihai.lanzous.com/iSvT3mrc9yj">蓝奏云链接</a> 下载完成后安装。</p><p>通过 <a href="https://guihai.lanzous.com/b00ubqu9c">蓝奏云</a> 下载，密码:ejpw。需要下载两个，riru 和 lsposed-magisk 模块，缺一不可。</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_155601.jpg" width="500" alt="两个模块"></img></p><p>下载完成后打开 Magisk Manager 刷入模块，先选择 riru 模块，不重启返回，再选择 lsposed-magisk 模块，然后重启手机即可，重启后可以使用系统相关的 xposed 模块，无模块限制，秒添加应用程序。</p><div class="tip warning faa-horizontal animated"><p><strong>请分清 Magisk 模块和 Xposed 模块！Magisk 模块为 zip 压缩包格式，xposed 模块为 apk/app。</strong></p></div><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_123623.jpg" width="500" alt="模块"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_153441.jpg" width="500" alt="添加模块"></img></p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_153554.jpg" width="500" alt="先选择 riru 模块"></img><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_153816.jpg" width="500" alt="返回"></img></p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/IMG_20210310_153554.jpg" width="500" alt="再选择 lsposed-magisk 模块"></img></p><p>等待刷入完成后，点击重启手机即可</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/LuoGuiHai/Blog-image/OCEAN-IMG/xposed/Screenshot_2021-03-10-15-58-28-403_com.topjohnwu.magisk.jpg" width="500" alt="重启手机即可"></img></p>
+              </div>
+            </details>
+<h2 id="添加应用和模块"><a class="markdownIt-Anchor" href="#添加应用和模块"></a> 添加应用和模块</h2>
+<p>一切完成，打开太极·阳或者 EDXposed，创建/添加应用程序，比如 QQ，然后下载模块，比如 QX 模块，进入模块管理，勾选 QX 模块复选框，重启 QQ 即可。如果 QQ 加了白名单，在最近任务清理可能没用，重启 QQ 步骤-强制停止 QQ 运行-打开 QQ。【EDXposed 需要在设置中开启即时模块列表才可免重启手机，只需重启应用】</p>
+<h1 id="结束"><a class="markdownIt-Anchor" href="#结束"></a> 结束</h1>
+<p>当然，Magisk 模块也可以在 rec 中刷入，看你自己选择啦。</p>
+<h2 id="xposed-模块"><a class="markdownIt-Anchor" href="#xposed-模块"></a> xposed 模块</h2>
+<p>xposed、太极、EDXposed 应用内都内置 xposed 模块仓库，可直接打开下载，不过在国内，下载速度很慢。</p>
+<p><a href="https://repo.xposed.info/module-overview">xposed 官网</a> 获取模块</p>
+<p><a href="https://taichi.cool/zh/module/">太极官网模块下载</a> 获取模块</p>
+<p>欢迎补充更多下载渠道…</p>
+]]></content>
+      <categories>
+        <category>XPOSED 教程</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+        <tag>xposed</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MIUI 线刷救砖</title>
+    <url>/posts/55425.html</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>介绍完 <a href="https://luoguihai.com/posts/36480.html">卡刷</a> ，接下来了解了解线刷。卡刷线刷都叫刷机，<font color="red">恢复出厂设置、双清不是！！</font></p>
+<h1 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h1>
+<p>线刷降级均需清除全部数据。此教程暂不适用部分红米手机（如下列表没有的机型则不支持）。</p>
+<h2 id="1-下载线刷工具"><a class="markdownIt-Anchor" href="#1-下载线刷工具"></a> 1. 下载线刷工具</h2>
+<p>下载通用刷机工具 <a href="http://bigota.d.miui.com/tools/MiFlash2018-5-28-0.zip">点击下载</a> (大小:51M，MD5:87c313381db7a7320ca6027c08f6829f) (如需安装驱动，执行 XiaoMiFlash.exe 运行后，点击左上角 Driver,再点击安装即可)</p>
+<h2 id="2-下载系统线刷包"><a class="markdownIt-Anchor" href="#2-下载系统线刷包"></a> 2. 下载系统线刷包</h2>
+<p>★机型表示为小米有 BL 锁机型，请先 <a href="http://www.miui.com/unlock/">点击下载通用解锁工具</a> 解锁。（完成解锁后再按照刷机教程步骤操作）</p>
+<p>☆机型表示为未上锁机型，可以直接按照教程继续刷机操作。</p>
+<p>(请检查文件后缀名是否为&quot;.tgz&quot;，如果为&quot;.gz&quot; 请重新命名后缀为&quot;.tgz&quot;）</p>
+<ul>
+<li>小米</li>
+</ul>
+<div class="tabs" id="xiaomi"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#xiaomi-1"><i class="iconfont icon-xiaomi"></i>小米</button></li><li class="tab"><button type="button" data-href="#xiaomi-2">数字系列</button></li><li class="tab"><button type="button" data-href="#xiaomi-3">NOTE 系列</button></li><li class="tab"><button type="button" data-href="#xiaomi-4">MIX 系列</button></li><li class="tab"><button type="button" data-href="#xiaomi-5">MAX 系列</button></li><li class="tab"><button type="button" data-href="#xiaomi-6">PLAY 系列</button></li><li class="tab"><button type="button" data-href="#xiaomi-7">CC 系列</button></li><li class="tab"><button type="button" data-href="#xiaomi-8">平板系列</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="xiaomi-1"><p><strong>小米线刷包下载</strong></p>
+<p><b><font color="red">注意，本文线刷包链接以失效，请访问官方下载！</font></b></p>
+<p><a href="http://www.miui.com/a-393.html">下载地址</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="xiaomi-2"><p>☆<a href="//update.miui.com/updates/v1/fullromdownload.php?d=cancro&b=F&r=cn&n=">小米手机 3 电信/联通 3G 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>☆<a href="//update.miui.com/updates/v1/fullromdownload.php?d=cancro&b=F&r=cn&n=">小米手机 4 CDMA/WCDMA/TD-LTE 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>☆<a href="//update.miui.com/updates/v1/fullromdownload.php?d=cancro_lte_ct&b=F&r=cn&n=">小米手机 4 电信 4G 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=libra&b=F&r=cn&n=">小米手机 4c 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=aqua&b=F&r=cn&n=">小米手机 4s 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=gemini&b=F&r=cn&n=">小米手机 5 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=capricorn&b=F&r=cn&n=">小米手机 5s 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=natrium&b=F&r=cn&n=">小米手机 5s plus 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=meri&b=F&r=cn&n=">小米手机 5c 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=tiffany&b=F&r=cn&n=">小米手机 5x 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=sagit&b=F&r=cn&n=">小米手机 6 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=wayne&b=F&r=cn&n=">小米手机 6X 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=dipper&b=F&r=cn&n=">小米手机 8 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=ursa&b=F&r=cn&n=">小米手机 8 探索版 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=sirius&b=F&r=cn&n=">小米手机 8SE 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=platina&b=F&r=cn&n=">小米手机 8 青春版 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=equuleus&b=F&r=cn&n=">小米手机 8 屏幕指纹版 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=cepheus&b=F&r=cn&n=">小米手机 9/透明版 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=grus&b=F&r=cn&n=">小米手机 9SE 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=crux&b=F&r=cn&n=chinatelecom">小米手机 9Pro 5G 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=umi&b=F&r=cn&n=chinatelecom">小米手机 10 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=cmi&b=F&r=cn&n=chinatelecom">小米手机 10Pro 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=vangogh&b=F&r=cn&n=chinatelecom">小米手机 10 青春版 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="xiaomi-3"><p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=scorpio&b=F&r=cn&n=">小米 Note2 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=jason&b=F&r=cn&n=">小米 Note3 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="xiaomi-4"><p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=lithium&b=F&r=cn&n=">小米 MIX 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=chiron&b=F&r=cn&n=">小米 MIX2 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=polaris&b=F&r=cn&n=">小米 MIX2S 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=perseus&b=F&r=cn&n=">小米 MIX3 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="xiaomi-5"><p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=hydrogen&b=F&r=cn&n=">小米 Max 32G 标准版 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=helium&b=F&r=cn&n=">小米 Max 64G/128G 高配版 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=oxygen&b=F&r=cn&n=">小米 MAX2 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=nitrogen&b=F&r=cn&n=">小米 MAX3 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="xiaomi-6"><p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=lotus&b=F&r=cn&n=">小米 PLAY 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="xiaomi-7"><p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=pyxis&b=F&r=cn&n=">小米 CC 9 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=laurus&b=F&r=cn&n=">小米 CC 9e 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=vela&b=F&r=cn&n=">小米 CC 9 美图定制版最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=tucana&b=F&r=cn&n=chinatelecom">小米 CC 9 Pro 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="xiaomi-8"><p>☆<a href="//update.miui.com/updates/v1/fullromdownload.php?d=latte&b=F&r=cn&n=">小米平板 2 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>☆<a href="//update.miui.com/updates/v1/fullromdownload.php?d=cappu&b=F&r=cn&n=">小米平板 3 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=clover&b=F&r=cn&n=">小米平板 4/plus 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<ul>
+<li>红米</li>
+</ul>
+<div class="tabs" id="redmi"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#redmi-1"><i class="iconfont icon-hongmilogo"></i>红米</button></li><li class="tab"><button type="button" data-href="#redmi-2">数字系列</button></li><li class="tab"><button type="button" data-href="#redmi-3">NOTE 系列</button></li><li class="tab"><button type="button" data-href="#redmi-4">K 系列</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="redmi-1"><p><strong>红米线刷包下载</strong></p>
+<p><b><font color="red">注意，本文线刷包链接以失效，请访问官方下载！</font></b></p>
+<p><a href="http://www.miui.com/a-393.html">下载地址</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="redmi-2"><p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=land&b=F&r=cn&n=">红米手机 3S/3X  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=omega&b=F&r=cn&n=">红米 Pro  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=prada&b=F&r=cn&n=">红米手机 4 标准版  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=markw&b=F&r=cn&n=">红米手机 4 高配版  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=rolex&b=F&r=cn&n=">红米手机 4A  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=santoni&b=F&r=cn&n=">红米手机 4X  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=riva&b=F&r=cn&n=">红米手机 5A 标准版 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=rosy&b=F&r=cn&n=">红米手机 5 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=vince&b=F&r=cn&n=">红米手机 5 Plus 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=cereus&b=F&r=cn&n=">红米 6 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=cactus&b=F&r=cn&n=">红米 6A 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=sakura&b=F&r=cn&n=">红米 6Pro 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=ysl&b=F&r=cn&n=">红米 S2 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=onclite&b=F&r=cn&n=">Redmi 7  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=pine&b=F&r=cn&n=">Redmi 7A  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=olive&b=F&r=cn&n=">Redmi 8 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=olivelite&b=F&r=cn&n=">Redmi 8A 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=lancelot&b=F&r=cn&n=">Redmi 9 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=atom&b=F&r=cn&n=">Redmi 10X 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=bomb&b=F&r=cn&n=">Redmi 10X Pro 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=merlin&b=F&r=cn&n=">Redmi 10X 4G 版 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="redmi-3"><p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=kenzo&b=F&r=cn&n=">红米 Note3 全网通 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=nikel&b=F&r=cn&n=">红米 Note4  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=mido&b=F&r=cn&n=">红米 Note4X 高通平台  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=nikel&b=F&r=cn&n=">红米 Note4X MTK 平台 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=whyred&b=F&r=cn&n=">红米手机 Note 5 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=ugglite&b=F&r=cn&n=">红米手机 Note 5A 标准版 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=ugg&b=F&r=cn&n=">红米手机 Note 5A 高配版 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=lavender&b=F&r=cn&n=">Redmi Note7 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=violet&b=F&r=cn&n=">Redmi Note7 Pro 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=ginkgo&b=F&r=cn&n=">Redmi Note8 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=begonia&b=F&r=cn&n=">Redmi Note8 Pro 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="redmi-4"><p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=davinci&b=F&r=cn&n=">Redmi K20  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=raphael&b=F&r=cn&n=">Redmi K20 Pro 系列 最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=phoenix&b=F&r=cn&n=">Redmi K30  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=picasso&b=F&r=cn&n=">Redmi K30 5G  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=picasso_48m&b=F&r=cn&n=">Redmi K30i 5G  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p>
+<p>★<a href="//update.miui.com/updates/v1/fullromdownload.php?d=lmi&b=F&r=cn&n=chinatelecom">Redmi K30 Pro  最新 稳定版 线刷 Fastboot 完整包点击下载</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="3-连接手机电脑"><a class="markdownIt-Anchor" href="#3-连接手机电脑"></a> 3. 连接手机电脑</h2>
+<p>在手机上操作：</p>
+<p>关机状态下，同时按住 音量下+电源键 进入 Fastboot 模式将手机 USB 连接电脑。</p>
+<div class="hide-block"><button type="button" class="hide-button button--animated" style="">查看步骤图
+    </button><div class="hide-content"><p><img src= "/img/loading.gif" data-lazy-src="https://www.miui.com/static/article/innerimg/tongyong/tongyong-fastboot.jpg" width="500" alt="Fastboot"></img></p>
+</div></div>
+<h2 id="4-解压线刷包"><a class="markdownIt-Anchor" href="#4-解压线刷包"></a> 4. 解压线刷包</h2>
+<p>线刷包下载完成后解压，打开线刷包文件夹，复制地址栏地址如下图。</p>
+<div class="hide-block"><button type="button" class="hide-button button--animated" style="">查看步骤图
+    </button><div class="hide-content"><p><img src= "/img/loading.gif" data-lazy-src="https://attach.bbs.miui.com/album/201612/16/181507zu200w76j6t6ucth.png" width="500" alt="解压线刷包"></img></p>
+</div></div>
+<h2 id="5-线刷"><a class="markdownIt-Anchor" href="#5-线刷"></a> 5. 线刷</h2>
+<p>刷机工具下载完成后安装（如遇到系统安全提示请选择允许安装），打开 XiaoMiFlash.exe 将复制的内容粘贴到蓝色区域位置。</p>
+<p>点击黄色圈选部分<code>加载设备</code>，刷机程序会自动识别手机，点击红色圈选部分<code>刷机</code>开始刷机。</p>
+<p>有 BL 锁机型默认会选择“全部删除并 LOCK”，没有 BL 锁机型需要手动选择“全部删除”（如下图绿框显示）</p>
+<div class="hide-block"><button type="button" class="hide-button button--animated" style="">查看步骤图
+    </button><div class="hide-content"><p><img src= "/img/loading.gif" data-lazy-src="https://attach.bbs.miui.com/album/201612/16/181507fanpn3qqbpbu4pq5.png" width="500" alt="开始刷机"></img></p>
+</div></div>
+<h2 id="6-等待完成"><a class="markdownIt-Anchor" href="#6-等待完成"></a> 6. 等待完成</h2>
+<p>然后等待，如下图表示已经刷机成功，手机会自动开机。<br /></p>
+<div class="hide-block"><button type="button" class="hide-button button--animated" style="">步骤图
+    </button><div class="hide-content"><p><img src= "/img/loading.gif" data-lazy-src="https://attach.bbs.miui.com/album/201612/16/181508q46e4htlznhl964t.png" width="500" alt="等待完成即可"></img></p>
+</div></div>
+<h2 id="7-成功"><a class="markdownIt-Anchor" href="#7-成功"></a> 7. 成功</h2>
+<p>重启手机后，如果看到下面图片，说明聪明的你刷机成功了哦，开始体验激动人心的 MIUI 吧！</p>
+<div class="hide-block"><button type="button" class="hide-button button--animated" style="">查看步骤图
+    </button><div class="hide-content"><p><img src= "/img/loading.gif" data-lazy-src="https://www.miui.com/static/article/zhinan_susV5.png" width="500" alt="成功"></img></p>
+</div></div>
+<h1 id="小米助手"><a class="markdownIt-Anchor" href="#小米助手"></a> 小米助手</h1>
+<p>无法从以上教程中获得帮助，请下载小米助手 <a href="http://zhushou.xiaomi.com/">点击跳转</a></p>
+<p>（小米助手安装完成后，确保手机已经进入 fastboot 模式，连接电脑，选择对应的版本即可完成刷机）</p>
+<blockquote>
+<p>以上教程转载于 <a href="http://www.miui.com/a-393.html">小米 MIUI 官网</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>MIUI 教程</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+        <tag>miui</tag>
+        <tag>线刷</tag>
+      </tags>
+  </entry>
+</search>
